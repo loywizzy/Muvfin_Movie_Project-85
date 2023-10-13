@@ -101,7 +101,7 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'เพิ่มจำนวนเรียบร้อย',
+                    title: 'เพิ่มจำนวนหนังเรียบร้อย',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -117,15 +117,23 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'ลดจำนวนเรียบร้อย',
+                    title: 'ลดจำนวนหนังเรียบร้อย',
                     showConfirmButton: false,
                     timer: 1500
                 });
             }
         },
         removeFromCart(item) {
-            this.cartItems = this.cartItems.filter(product => product.id !== item.id);;
-        },
+            this.cartItems = this.cartItems.filter(product => product.id !== item.id);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'ลบหนังออกจากตะกร้าเรียบร้อย',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+        
 
     },
 })

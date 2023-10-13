@@ -39,7 +39,7 @@
       <div class="frame-inner" />
       <div class="data-table-parent">
         <div class="data-table">
-          <b class="total-price" >Total price</b>
+          <b class="total-price">Total price</b>
           <div class="data-table-row" v-for="item in data.getCartItems" :key="item.id">
             <div class="data-table-cell-content">
               <div class="text1"> {{ item.name }}</div>
@@ -47,17 +47,17 @@
             <div class="data-table-cell-content1">
               <div class="text1">{{ item.price }} Bath</div>
             </div>
-            
-            
+
+
           </div>
           <div class="data-table-row">
-              <div class="data-table-cell-content4">
-                <div class="text1">Discount 10%</div>
-              </div>
-              <div class="data-table-cell-content5">
-                <div class="text1" style="color: red;">- {{ calculateDiscount().discountAmount }} Bath</div>
-              </div>
+            <div class="data-table-cell-content4">
+              <div class="text1">Discount 10%</div>
             </div>
+            <div class="data-table-cell-content5">
+              <div class="text1" style="color: red;">- {{ calculateDiscount().discountAmount }} Bath</div>
+            </div>
+          </div>
           <div class="data-table-row4">
             <div class="data-table-cell-content4">
               <b class="text1">Order Total ( {{ totalItems }} )</b>
@@ -75,7 +75,7 @@
     </div>
     <div class="col-md-6">
       <div v-for="product in data.products" :key="product.id">
-        <div class="column-for-content-elements" v-if="product.id === 2">
+        <div class="column-for-content-elements" v-if="product.id === 3">
           <img class="demo-image-movieposter3" alt="" :src=product.img />
           <div class="text15">{{ product.year }}</div>
           <b class="text16">{{ product.name }}</b>
@@ -109,7 +109,7 @@
       </div>
     </div>
     <div v-for="product in data.products" :key="product.id">
-      <div class="column-for-content-elements1" v-if="product.id === 31">
+      <div class="column-for-content-elements1" v-if="product.id === 24">
         <img class="demo-image-movieposter3" alt="" :src=product.img />
         <div class="text15">{{ product.year }}</div>
         <b class="text16">{{ product.name }}</b>
@@ -118,7 +118,7 @@
             <span class="span">{{ product.imdb }} <i class="fa-solid fa-star" style="color: #F9EEB6;"></i></span>
           </p>
           <p class="p">
-            <span>TIME : {{ product.time }}</span>
+            <span>TIME : {{ product.time }} </span>
           </p>
           <p class="p">
             <span>Director : {{ product.director }}</span>
@@ -143,7 +143,7 @@
     </div>
     <div v-for="product in data.products" :key="product.id">
       <div class="column-for-content-elements2" v-if="product.id === 8">
-        <img class="demo-image-movieposter3" alt="" :src="product.img" />
+        <img class="demo-image-movieposter3" alt="" :src=product.img />
         <div class="text15">{{ product.year }}</div>
         <b class="text16">{{ product.name }}</b>
         <div class="text17">
@@ -151,7 +151,7 @@
             <span class="span">{{ product.imdb }} <i class="fa-solid fa-star" style="color: #F9EEB6;"></i></span>
           </p>
           <p class="p">
-            <span>TIME : {{ product.time }}</span>
+            <span>TIME : {{ product.time }} </span>
           </p>
           <p class="p">
             <span>Director : {{ product.director }}</span>
@@ -169,6 +169,7 @@
           <p class="blank-line4">&nbsp;</p>
         </div>
         <div class="spacer" />
+        <img class="star-icon" alt="" src="/star.svg" />
         <button @click="data.addToCart(product)" class="btn btn-dark position-absolute bottom-0 m-3 rounded-pill">Add
           to cart</button>
       </div>
@@ -177,7 +178,7 @@
   </div>
 </template>
 <script setup>
-import { ref, computed , watchEffect} from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 import headermuf from '../views/headermuf.vue'
 
 import { useShoppingStore } from "../store/movies"
@@ -215,10 +216,8 @@ watchEffect(() => {
 
 </script>
 <style scoped>
-
-.lob{
+.lob {
   height: 300%;
 }
-
 </style>
   
