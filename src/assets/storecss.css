@@ -361,7 +361,7 @@
     border-radius: var(--br-3xs);
     background-color: #eaf3ff;
     width: 729px;
-    height: 385px;
+    height: 650px;
     z-index: 0;
   }
   
@@ -444,7 +444,7 @@
   
   .data-table {
     align-self: stretch;
-    height: 266px;
+    height: auto;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -500,13 +500,14 @@
     top: 180px;
     left: 945px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    height: 380px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: var(--gap-3xs);
     font-size: var(--font-size-base);
+    height: 650px;
   }
   
   .macbook-pro-16-2-child {
@@ -689,7 +690,7 @@
   
   .column-for-content-elements {
     position: absolute;
-    top: 652px;
+    top: 950px;
     left: 945px;
     border-radius: var(--br-3xs);
     background-color: var(--color-lightblue-100);
@@ -710,7 +711,7 @@
   
   .column-for-content-elements1 {
     position: absolute;
-    top: 652px;
+    top: 950px;
     left: 1201px;
     border-radius: var(--br-3xs);
     background-color: var(--color-lightblue-100);
@@ -731,7 +732,7 @@
   
   .column-for-content-elements2 {
     position: absolute;
-    top: 652px;
+    top: 950px;
     left: 1456px;
     border-radius: var(--br-3xs);
     background-color: var(--color-lightblue-100);
@@ -752,7 +753,7 @@
   
   .recommended-for-you {
     position: absolute;
-    top: 592px;
+    top: 880px;
     left: 952px;
     font-size: 40px;
     line-height: 100%;
