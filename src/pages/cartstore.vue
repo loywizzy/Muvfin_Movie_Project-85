@@ -19,9 +19,9 @@
         <div class="text">
           <b class="add-product-name mb-3">{{ item.name }}</b>
           <div class="price-29-per-week-parent">
-            <div class="category-action">Price : {{ item.price }} per month</div>
-            <div class="category-action">Time : {{ item.time }}</div>
-            <div class="category-action">Category : {{ item.type }}</div>
+            <div class="category-action"><b>Price : {{ item.price }} per month</b></div>
+            <div class="category-action"><b>Time : {{ item.time }}</b></div>
+            <div class="category-action"><b>Category : {{ item.type }}</b></div>
           </div>
           <div class="eye-catching-button">
             <div class="hovertrue">
@@ -39,19 +39,19 @@
       <div class="frame-inner" />
       <div class="data-table-parent">
         <div class="data-table">
-          <b class="total-price">Total price</b>
+          <b class="total-price" >Total price</b>
           <div class="data-table-row" v-for="item in data.getCartItems" :key="item.id">
-            <div class="data-table-cell-content">
+            <div class="data-table-cell-content" v-if="item.checked">
               <div class="text1"> {{ item.name }}</div>
             </div>
-            <div class="data-table-cell-content1">
-              <div class="text1">{{ item.price }} Bath</div>
+            <div class="data-table-cell-content1" v-if="item.checked">
+              <div class="text1">{{ item.price * item.quantity}} Bath</div>
             </div>
 
 
           </div>
           <div class="data-table-row">
-            <div class="data-table-cell-content4">
+            <div class="data-table-cell-content4" >
               <div class="text1">Discount 10%</div>
             </div>
             <div class="data-table-cell-content5">
@@ -59,8 +59,8 @@
             </div>
           </div>
           <div class="data-table-row4">
-            <div class="data-table-cell-content4">
-              <b class="text1">Order Total ( {{ totalItems }} )</b>
+            <div class="data-table-cell-content4" >
+              <b class="text1" >Order Total ( {{ totalItems }} )</b>
             </div>
             <div class="data-table-cell-content5">
               <b class="text1">{{ calculateDiscount().discountedTotal }} Bath</b>
@@ -178,7 +178,8 @@
   </div>
 </template>
 <script setup>
-import { ref, computed, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
+import { computed } from 'vue';
 import headermuf from '../views/headermuf.vue'
 
 import { useShoppingStore } from "../store/movies"
@@ -213,6 +214,7 @@ const selectAll = ref(false);
 watchEffect(() => {
   selectAllItems();
 });
+
 
 </script>
 <style scoped>
