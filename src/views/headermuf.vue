@@ -18,6 +18,9 @@ const log = userlogin()
         <li class="nav-item m-3">
           <router-link class="nav-link fs-3" to="/category">CATEGORY</router-link>
         </li>
+        <li class="nav-item m-3">
+          <router-link class="nav-link fs-3" to="/history">HISTORY</router-link>
+        </li>
       </ul>
     </div>
     <div class="m-3">

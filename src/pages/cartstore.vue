@@ -69,6 +69,7 @@
         </div>
         <div class="text-parent">
           <div class="text11">when you buy 150 Bath</div>
+          <button @click="data.addTohistory(data.getCartItems,totalItems,calculateDiscount().discountAmount,calculateDiscount().discountedTotal)" class="btn btn-dark m-3 rounded-pill">Purchase</button>
           <b class="text12">SAVE 10 %</b>
         </div>
       </div>
