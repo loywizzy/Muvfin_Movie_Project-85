@@ -185,14 +185,18 @@ import headermuf from '../views/headermuf.vue'
 import { useShoppingStore } from "../store/movies"
 const data = useShoppingStore();
 const totalItems = computed(() => {
-  return data.getCartItems.reduce((total, item) => total + item.quantity, 0);
+  return data.getCartItems.reduce((total, item) => {
+    return item.checked ? total + item.quantity : total;
+  }, 0);
 });
 
 const calculateDiscount = () => {
   const discountPercentage = 10;
-  const totalWithoutDiscount = data.cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0);
+  const checkedItems = data.getCartItems.filter(item => item.checked);
+  const totalWithoutDiscount = checkedItems.reduce((acc, item) => acc += item.price * item.quantity, 0);
   const discountedTotal = totalWithoutDiscount > 150 ? totalWithoutDiscount * (1 - discountPercentage / 100) : totalWithoutDiscount;
   const discountAmount = totalWithoutDiscount - discountedTotal;
+
   return {
     discountAmount: discountAmount.toFixed(2),
     discountedTotal: discountedTotal.toFixed(2)
